@@ -11,6 +11,23 @@ A 4-bit accumulator CPU taped out on SCL's 1.2 um C1D open PDK, in the standard 
 - **Verification:** RTL, ALU (1,024 cases), gate-level and post-layout SDF simulation pass at min/typ/max; LVS match;
   DRC 0 violations with `c1d_drc.drc` v1.1.
 
+## Images
+
+Rendered from the final submitted GDS with KLayout (`flow/render_images.py`).
+
+| | |
+|---|---|
+| ![Full chip](images/chip_full_dark.png) | ![Full chip, light](images/chip_full.png) |
+| **The whole 3 mm x 3 mm die:** 24 signal pads and 4 power pads, channel wiring, the routed core, the chip art and the Silicon No. block | Same view on a light background |
+| ![Core](images/core.png) | ![Cells close-up](images/core_cells_zoom.png) |
+| **The routed core** (about 1.6 mm square): 14 standard-cell rows, power ring, metal1/metal2 routing | **Close-up of two cell rows:** VDD/VSS rails, transistors, contacts and vias |
+| ![Pad ring corner](images/pad_ring_corner.png) | ![Pads along the top edge](images/pads_edge.png) |
+| **Pad ring corner:** bond pads with their driver/ESD structures | **Pads along the top edge,** wired into the core |
+| ![Chip art](images/chip_art.png) | ![Silicon No. block](images/silicon_no_block.png) |
+| **The monkey:** chip art in metal2 | **The OS0084 Silicon No. block** as placed on the die |
+
+More figures (block diagram, FSM, design flow) are in `docs/img/` and the teaching guide in `docs/`.
+
 ## Layout of this repo
 
 | Folder | Contents |
@@ -24,6 +41,7 @@ A 4-bit accumulator CPU taped out on SCL's 1.2 um C1D open PDK, in the standard 
 | `lvs/` | Design netlists for LVS |
 | `checks/` | DRC / LVS logs and DRC marker databases, grid audit, submission DRC reports |
 | `layout/art/` | Chip art (metal-only) |
+| `images/` | KLayout renders of the final chip (made by `flow/render_images.py`) |
 | `submission/` | DRC report and MD5 of the submitted v3 GDS |
 | `docs/` | Runbook, teaching guide, diagrams, KLayout 2.5D script |
 
