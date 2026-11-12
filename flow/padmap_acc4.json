@@ -1,0 +1,55 @@
+{
+  "_comment": "Pad map for acc4 in frame3mmx3mm_opad. Core-block port -> frame net. Matches the header of rtl/acc4_top.v.",
+  "design": "acc4_core",
+  "frame_gds": "layout/frame/frame3mmx3mm_opad.gds",
+  "frame_cdl": "layout/frame/frame3mmx3mm_opad.cdl",
+  "core_origin": [
+    700.0,
+    700.0
+  ],
+  "die_size": [
+    1600.0,
+    1600.0
+  ],
+  "core_margin": 100.0,
+  "pin_span": [
+    150.0,
+    1450.0
+  ],
+  "power_width": 20.0,
+  "signal_width": 3.0,
+  "pins": {
+    "addr_pn[0]": "PAD1_IN",
+    "clk": "PAD2_OUT",
+    "addr_pn[1]": "PAD3_IN",
+    "rst_n": "PAD4_OUT",
+    "addr_pn[2]": "PAD5_IN",
+    "run": "PAD6_OUT",
+    "addr_pn[3]": "PAD7_IN",
+    "din[0]": "PAD8_OUT",
+    "addr_pn[4]": "PAD9_IN",
+    "din[1]": "PAD10_OUT",
+    "dout_pn[0]": "PAD11_IN",
+    "din[2]": "PAD12_OUT",
+    "dout_pn[1]": "PAD13_IN",
+    "din[3]": "PAD14_OUT",
+    "dout_pn[2]": "PAD15_IN",
+    "din[4]": "PAD16_OUT",
+    "dout_pn[3]": "PAD17_IN",
+    "din[5]": "PAD18_OUT",
+    "rd_pn": "PAD19_IN",
+    "din[6]": "PAD20_OUT",
+    "we_pn": "PAD21_IN",
+    "din[7]": "PAD22_OUT",
+    "halt_pn": "PAD23_IN"
+  },
+  "power": {
+    "_comment": "stripe_y_frame = frame y of the 20 um M1 stripe centre; must be a row-gap centre (core-local 219.15 + 97.4*k)",
+    "VDD": {
+      "stripe_y_frame": 1308.75
+    },
+    "VSS": {
+      "stripe_y_frame": 1698.35
+    }
+  }
+}

@@ -1,0 +1,313 @@
+* acc4_core from pnr/acc4_core/acc4_core_rt.v by flow/v2spice.py
+.SUBCKT acc4_core clk halt_pn rd_pn rst_n run we_pn addr_pn[4] addr_pn[3] addr_pn[2] addr_pn[1] addr_pn[0] din[7] din[6] din[5] din[4] din[3] din[2] din[1] din[0] dout_pn[3] dout_pn[2] dout_pn[1] dout_pn[0] VDD VSS
+X_147_ net86 _099_ VDD VSS INVR01
+X_148_ net96 _100_ VDD VSS INVR01
+X_149_ run _101_ VDD VSS INVR01
+X_150_ u_cpu.state[0] _102_ VDD VSS INVR01
+X_151_ u_cpu.state[1] _103_ VDD VSS INVR01
+X_152_ net123 _104_ VDD VSS INVR01
+X_153_ dout[0] _105_ VDD VSS INVR01
+X_154_ net119 _106_ VDD VSS INVR01
+X_155_ net120 _107_ VDD VSS INVR01
+X_156_ net127 _108_ VDD VSS INVR01
+X_157_ net126 _109_ VDD VSS INVR01
+X_158_ _002_ _110_ VDD VSS INVR01
+X_159_ u_cpu.state[0] _103_ halt VDD VSS NOR200
+X_160_ _102_ u_cpu.state[1] _111_ VDD VSS NOR200
+X_161_ net56 net138 addr[0] net114 VDD VSS MX2101
+X_162_ net57 net134 addr[1] net109 VDD VSS MX2101
+X_163_ net63 net131 addr[2] net105 VDD VSS MX2101
+X_164_ net66 net128 addr[3] net102 VDD VSS MX2101
+X_165_ net71 net124 addr[4] net99 VDD VSS MX2101
+X_166_ _101_ u_cpu.state[1] _112_ VSS VDD OR2101
+X_167_ net86 _100_ _002_ _113_ VSS VDD ORND01
+X_168_ net83 _099_ _102_ _114_ VDD VSS ADNR01
+X_169_ _113_ _114_ _112_ rd VDD VSS ADNR01
+X_170_ net84 net86 _100_ _115_ VDD VSS NOR300
+X_171_ _115_ net61 run u_cpu.we VDD VSS AND301
+X_172_ u_cpu.state[0] _112_ _116_ VDD VSS NOR200
+X_173_ net88 net96 _117_ VSS VDD AND201
+X_174_ _099_ net96 _118_ VDD VSS NOR200
+X_175_ _099_ net94 _119_ VSS VDD OR2101
+X_176_ net85 net86 _120_ VSS VDD AND201
+X_177_ net121 dout[3] net122 dout[0] _121_ VDD VSS OR4101
+X_178_ _121_ _117_ net85 _122_ VSS VDD NND300
+X_179_ _122_ _120_ _103_ run _123_ VDD VSS AND401
+X_180_ net45 _123_ _124_ VSS VDD OR2101
+X_181_ net56 net136 _125_ net115 VDD VSS MX2101
+X_182_ net12 net139 _003_ net16 VDD VSS MX2101
+X_183_ net137 net133 _126_ VSS VDD AND201
+X_184_ _126_ _127_ VDD VSS INVR01
+X_185_ net140 net133 _128_ VDD VSS NOR200
+X_186_ _126_ net77 _129_ VDD VSS NOR200
+X_187_ net59 net41 _130_ net110 VDD VSS MX2101
+X_188_ net12 net135 _004_ net15 VDD VSS MX2101
+X_189_ net131 _127_ _022_ VDD VSS NOR200
+X_190_ net63 net14 _023_ net106 VDD VSS MX2101
+X_191_ net68 _126_ net12 _024_ VSS VDD ORND01
+X_192_ net12 _023_ _024_ net130 _025_ VDD VSS AOI401
+X_193_ _025_ _005_ VDD VSS INVR01
+X_194_ _000_ net64 _127_ _026_ VDD VSS NOR300
+X_195_ _026_ net21 _027_ net82 VDD VSS MX2101
+X_196_ net13 net129 _006_ net11 VDD VSS MX2101
+X_197_ _126_ u_cpu.pc[3] net130 _028_ VSS VDD NND300
+X_198_ net67 _028_ _029_ VDD VSS NOR200
+X_199_ _029_ net19 _030_ net81 VDD VSS MX2101
+X_200_ net13 net125 _007_ net10 VDD VSS MX2101
+X_201_ run _102_ _031_ VDD VSS NOR200
+X_202_ net43 _031_ _008_ VSS VDD OR2101
+X_203_ net126 net100 _032_ VSS VDD XNR201
+X_204_ net132 net108 _033_ VSS VDD XNR201
+X_205_ _108_ net103 _034_ VSS VDD XNR201
+X_206_ _000_ net78 _035_ VSS VDD AND201
+X_207_ net127 net132 net140 u_cpu.pc[1] _036_ VDD VSS OR4101
+X_208_ net137 net118 _037_ VSS VDD XOR201
+X_209_ _037_ _118_ net62 run net83 _038_ VDD VSS AND501
+X_210_ net77 _033_ _039_ VSS VDD XNR201
+X_211_ net113 _129_ _040_ VSS VDD XNR201
+X_212_ _034_ _035_ _041_ VSS VDD XNR201
+X_213_ _032_ _036_ _042_ VSS VDD XNR201
+X_214_ _042_ _041_ _038_ _043_ VSS VDD NND300
+X_215_ _039_ _040_ _043_ _044_ VDD VSS NOR300
+X_216_ u_cpu.state[1] _044_ _009_ VSS VDD OR2101
+X_217_ _115_ _120_ _045_ VSS VDD OR2101
+X_218_ _102_ _112_ _045_ _046_ VDD VSS NOR300
+X_219_ net89 net94 _110_ _047_ VDD VSS NOR300
+X_220_ _002_ _100_ _099_ _048_ VSS VDD NND300
+X_221_ _105_ net37 _049_ VDD VSS NOR200
+X_222_ din[0] net1 _049_ _050_ VDD VSS ADNR01
+X_223_ dout[0] din[0] _051_ VSS VDD AND201
+X_224_ net89 net94 _002_ _052_ VDD VSS NOR300
+X_225_ _051_ net76 _053_ net90 VDD VSS MX2101
+X_226_ _105_ net1 _054_ VSS VDD OR2101
+X_227_ _050_ _053_ _054_ _010_ VSS VDD ORND01
+X_228_ net122 din[1] _055_ VSS VDD AND201
+X_229_ net122 din[1] _056_ VDD VSS NOR200
+X_230_ net122 din[1] _057_ VSS VDD XOR201
+X_231_ _051_ _057_ _058_ VSS VDD XNR201
+X_232_ _119_ _058_ _059_ VDD VSS NOR200
+X_233_ _105_ din[0] _057_ _060_ VDD VSS ADNR01
+X_234_ _057_ din[0] _105_ _061_ VSS VDD NND300
+X_235_ _061_ net95 net91 _062_ VSS VDD NND300
+X_236_ net94 _055_ _063_ VDD VSS NOR200
+X_237_ net89 _056_ _063_ _064_ VDD VSS NOR300
+X_238_ net37 _059_ _064_ _065_ VDD VSS NOR300
+X_239_ net28 _062_ _065_ _066_ VSS VDD ORND01
+X_240_ din[1] net33 _067_ VSS VDD OR2101
+X_241_ _067_ _066_ net2 _068_ VSS VDD NND300
+X_242_ _104_ net2 _068_ _011_ VSS VDD ORND01
+X_243_ _107_ net4 _069_ VDD VSS NOR200
+X_244_ net120 din[2] _070_ VSS VDD XNR201
+X_245_ _104_ din[1] _071_ VDD VSS NOR200
+X_246_ net28 net75 _071_ _072_ VDD VSS OR3101
+X_247_ net29 _071_ _070_ _073_ VSS VDD ORND01
+X_248_ _073_ _072_ _117_ _074_ VSS VDD NND300
+X_249_ _051_ _057_ _055_ _075_ VDD VSS ADNR01
+X_250_ net75 net24 net42 _076_ VSS VDD ORND01
+X_251_ net75 net24 _076_ _077_ VDD VSS ADNR01
+X_252_ net120 din[2] _078_ VSS VDD AND201
+X_253_ _078_ _079_ VDD VSS INVR01
+X_254_ net95 _078_ _080_ VDD VSS NOR200
+X_255_ net120 din[2] _081_ VDD VSS NOR200
+X_256_ net91 _080_ _081_ _082_ VDD VSS NOR300
+X_257_ net38 _077_ _082_ _083_ VDD VSS NOR300
+X_258_ din[2] net34 net5 _084_ VSS VDD ORND01
+X_259_ _074_ _083_ _084_ _085_ VDD VSS ADNR01
+X_260_ _069_ _085_ _012_ VSS VDD OR2101
+X_261_ _106_ net6 _086_ VSS VDD OR2101
+X_262_ net119 din[3] _087_ VDD VSS NOR200
+X_263_ _106_ din[3] _088_ VSS VDD XNR201
+X_264_ _107_ din[2] _073_ _089_ VSS VDD ORND01
+X_265_ _088_ _089_ _090_ VSS VDD XNR201
+X_266_ net75 net25 _079_ _091_ VSS VDD ORND01
+X_267_ _088_ _091_ _092_ VSS VDD XNR201
+X_268_ net119 din[3] net95 _093_ VDD VSS ADNR01
+X_269_ net87 _087_ _093_ _094_ VDD VSS NOR300
+X_270_ net38 _094_ _095_ VDD VSS NOR200
+X_271_ _119_ _092_ _095_ _096_ VSS VDD ORND01
+X_272_ _117_ _090_ _096_ _097_ VDD VSS ADNR01
+X_273_ din[3] net33 net6 _098_ VSS VDD ORND01
+X_274_ _097_ _098_ _086_ _013_ VSS VDD ORND01
+X_275_ net45 net116 _014_ din[0] VDD VSS MX2101
+X_276_ net44 net112 _015_ din[1] VDD VSS MX2101
+X_277_ net47 net104 _016_ din[2] VDD VSS MX2101
+X_278_ net48 net101 _017_ din[3] VDD VSS MX2101
+X_279_ net47 net98 _018_ din[4] VDD VSS MX2101
+X_280_ net53 net97 _019_ din[5] VDD VSS MX2101
+X_281_ net53 net88 _020_ din[6] VDD VSS MX2101
+X_282_ net43 net84 _021_ din[7] VDD VSS MX2101
+X_283_ clknet_1_0__leaf_clk _003_ rst_n _001_ u_cpu.pc[0] VSS VDD DFCL11
+X_284_ clknet_1_0__leaf_clk _004_ rst_n _136_ u_cpu.pc[1] VSS VDD DFCL11
+X_285_ clknet_1_0__leaf_clk _005_ rst_n _000_ u_cpu.pc[2] VSS VDD DFCL11
+X_286_ clknet_1_0__leaf_clk _006_ rst_n _135_ u_cpu.pc[3] VSS VDD DFCL11
+X_287_ clknet_1_0__leaf_clk _007_ rst_n _134_ u_cpu.pc[4] VSS VDD DFCL11
+X_288_ clknet_1_0__leaf_clk _008_ rst_n _133_ u_cpu.state[0] VSS VDD DFCL11
+X_289_ clknet_1_0__leaf_clk _009_ rst_n _132_ u_cpu.state[1] VSS VDD DFCL11
+X_290_ clknet_1_1__leaf_clk _010_ rst_n _131_ dout[0] VSS VDD DFCL11
+X_291_ clknet_1_1__leaf_clk _011_ rst_n _146_ dout[1] VSS VDD DFCL11
+X_292_ clknet_1_1__leaf_clk _012_ rst_n _145_ dout[2] VSS VDD DFCL11
+X_293_ clknet_1_1__leaf_clk _013_ rst_n _144_ dout[3] VSS VDD DFCL11
+X_294_ clknet_1_0__leaf_clk _014_ rst_n _143_ u_cpu.ir[0] VSS VDD DFCL11
+X_295_ clknet_1_0__leaf_clk _015_ rst_n _142_ u_cpu.ir[1] VSS VDD DFCL11
+X_296_ clknet_1_1__leaf_clk _016_ rst_n _141_ u_cpu.ir[2] VSS VDD DFCL11
+X_297_ clknet_1_1__leaf_clk _017_ rst_n _140_ u_cpu.ir[3] VSS VDD DFCL11
+X_298_ clknet_1_0__leaf_clk _018_ rst_n _139_ u_cpu.ir[4] VSS VDD DFCL11
+X_299_ clknet_1_1__leaf_clk _019_ rst_n _138_ u_cpu.ir[5] VSS VDD DFCL11
+X_300_ clknet_1_1__leaf_clk _020_ rst_n _137_ u_cpu.ir[6] VSS VDD DFCL11
+X_301_ clknet_1_1__leaf_clk _021_ rst_n _002_ u_cpu.ir[7] VSS VDD DFCL11
+Xu_drv_addr0 addr[0] addr_pn[0] VDD VSS INVR05
+Xu_drv_addr1 addr[1] addr_pn[1] VDD VSS INVR05
+Xu_drv_addr2 addr[2] addr_pn[2] VDD VSS INVR05
+Xu_drv_addr3 net22 addr_pn[3] VDD VSS INVR05
+Xu_drv_addr4 net20 addr_pn[4] VDD VSS INVR05
+Xu_drv_dout0 dout[0] dout_pn[0] VDD VSS INVR05
+Xu_drv_dout1 net123 dout_pn[1] VDD VSS INVR05
+Xu_drv_dout2 net121 dout_pn[2] VDD VSS INVR05
+Xu_drv_dout3 net119 dout_pn[3] VDD VSS INVR05
+Xu_drv_halt halt halt_pn VDD VSS INVR05
+Xu_drv_rd net17 rd_pn VDD VSS INVR05
+Xu_drv_we u_cpu.we we_pn VDD VSS INVR05
+Xfanout1 net3 net1 VDD VSS CDRI01
+Xfanout2 net3 net2 VDD VSS CDRI01
+Xfanout3 net4 net3 VDD VSS CDRI01
+Xfanout4 net7 net4 VDD VSS CDRI01
+Xfanout5 net7 net5 VDD VSS CDRI01
+Xfanout6 net9 net6 VDD VSS CDRI01
+Xfanout7 net8 net7 VDD VSS CDRI01
+Xmax_cap8 net9 net8 VDD VSS CDRI01
+Xwire9 _046_ net9 VDD VSS CDRI01
+Xwire10 _030_ net10 VDD VSS CDRI01
+Xwire11 _027_ net11 VDD VSS CDRI01
+Xfanout12 _124_ net12 VDD VSS CDRI01
+Xfanout13 _124_ net13 VDD VSS CDRI01
+Xwire14 _022_ net14 VDD VSS CDRI01
+Xwire15 _130_ net15 VDD VSS CDRI01
+Xwire16 _125_ net16 VDD VSS CDRI01
+Xwire17 net18 net17 VDD VSS CDRI01
+Xwire18 rd net18 VDD VSS CDRI01
+Xmax_cap19 net20 net19 VDD VSS CDRI01
+Xwire20 addr[4] net20 VDD VSS CDRI01
+Xwire21 net23 net21 VDD VSS CDRI01
+Xmax_cap22 net23 net22 VDD VSS CDRI01
+Xwire23 addr[3] net23 VDD VSS CDRI01
+Xfanout24 net27 net24 VDD VSS CDRI01
+Xfanout25 net26 net25 VDD VSS CDRI01
+Xmax_cap26 net27 net26 VDD VSS CDRI01
+Xwire27 _075_ net27 VDD VSS CDRI01
+Xfanout28 net32 net28 VDD VSS CDRI01
+Xfanout29 net30 net29 VDD VSS CDRI01
+Xwire30 net31 net30 VDD VSS CDRI01
+Xmax_cap31 net32 net31 VDD VSS CDRI01
+Xwire32 _060_ net32 VDD VSS CDRI01
+Xfanout33 net36 net33 VDD VSS CDRI01
+Xfanout34 net35 net34 VDD VSS CDRI01
+Xmax_cap35 net36 net35 VDD VSS CDRI01
+Xwire36 _048_ net36 VDD VSS CDRI01
+Xfanout37 net40 net37 VDD VSS CDRI01
+Xfanout38 net39 net38 VDD VSS CDRI01
+Xload_slew39 net40 net39 VDD VSS CDRI01
+Xwire40 _047_ net40 VDD VSS CDRI01
+Xwire41 _129_ net41 VDD VSS CDRI01
+Xmax_cap42 _118_ net42 VDD VSS CDRI01
+Xfanout43 net46 net43 VDD VSS CDRI01
+Xfanout44 net46 net44 VDD VSS CDRI01
+Xfanout45 net50 net45 VDD VSS CDRI01
+Xfanout46 net50 net46 VDD VSS CDRI01
+Xfanout47 net49 net47 VDD VSS CDRI01
+Xfanout48 net49 net48 VDD VSS CDRI01
+Xfanout49 net51 net49 VDD VSS CDRI01
+Xfanout50 net52 net50 VDD VSS CDRI01
+Xfanout51 net52 net51 VDD VSS CDRI01
+Xfanout52 net55 net52 VDD VSS CDRI01
+Xfanout53 net54 net53 VDD VSS CDRI01
+Xload_slew54 net55 net54 VDD VSS CDRI01
+Xwire55 _116_ net55 VDD VSS CDRI01
+Xfanout56 net58 net56 VDD VSS CDRI01
+Xfanout57 net58 net57 VDD VSS CDRI01
+Xfanout58 net60 net58 VDD VSS CDRI01
+Xfanout59 net60 net59 VDD VSS CDRI01
+Xfanout60 net61 net60 VDD VSS CDRI01
+Xfanout61 net72 net61 VDD VSS CDRI01
+Xfanout62 net72 net62 VDD VSS CDRI01
+Xfanout63 net65 net63 VDD VSS CDRI01
+Xfanout64 net65 net64 VDD VSS CDRI01
+Xfanout65 net66 net65 VDD VSS CDRI01
+Xfanout66 net69 net66 VDD VSS CDRI01
+Xfanout67 net68 net67 VDD VSS CDRI01
+Xfanout68 net70 net68 VDD VSS CDRI01
+Xfanout69 net70 net69 VDD VSS CDRI01
+Xfanout70 net73 net70 VDD VSS CDRI01
+Xfanout71 net73 net71 VDD VSS CDRI01
+Xfanout72 _111_ net72 VDD VSS CDRI01
+Xfanout73 net74 net73 VDD VSS CDRI01
+Xmax_cap74 _111_ net74 VDD VSS CDRI01
+Xfanout75 _070_ net75 VDD VSS CDRI01
+Xwire76 _052_ net76 VDD VSS CDRI01
+Xfanout77 net80 net77 VDD VSS CDRI01
+Xfanout78 net79 net78 VDD VSS CDRI01
+Xmax_cap79 net80 net79 VDD VSS CDRI01
+Xwire80 _128_ net80 VDD VSS CDRI01
+Xwire81 _109_ net81 VDD VSS CDRI01
+Xwire82 _108_ net82 VDD VSS CDRI01
+Xfanout83 u_cpu.ir[7] net83 VDD VSS CDRI01
+Xmax_cap84 net83 net84 VDD VSS CDRI01
+Xfanout85 u_cpu.ir[7] net85 VDD VSS CDRI01
+Xfanout86 net93 net86 VDD VSS CDRI01
+Xfanout87 net93 net87 VDD VSS CDRI01
+Xmax_cap88 net87 net88 VDD VSS CDRI01
+Xfanout89 net91 net89 VDD VSS CDRI01
+Xmax_cap90 net89 net90 VDD VSS CDRI01
+Xfanout91 net92 net91 VDD VSS CDRI01
+Xfanout92 u_cpu.ir[6] net92 VDD VSS CDRI01
+Xmax_cap93 net92 net93 VDD VSS CDRI01
+Xfanout94 net95 net94 VDD VSS CDRI01
+Xfanout95 u_cpu.ir[5] net95 VDD VSS CDRI01
+Xfanout96 u_cpu.ir[5] net96 VDD VSS CDRI01
+Xmax_cap97 net96 net97 VDD VSS CDRI01
+Xwire98 u_cpu.ir[4] net98 VDD VSS CDRI01
+Xwire99 net100 net99 VDD VSS CDRI01
+Xload_slew100 u_cpu.ir[4] net100 VDD VSS CDRI01
+Xwire101 u_cpu.ir[3] net101 VDD VSS CDRI01
+Xwire102 net103 net102 VDD VSS CDRI01
+Xload_slew103 u_cpu.ir[3] net103 VDD VSS CDRI01
+Xwire104 u_cpu.ir[2] net104 VDD VSS CDRI01
+Xwire105 net107 net105 VDD VSS CDRI01
+Xwire106 net107 net106 VDD VSS CDRI01
+Xload_slew107 net108 net107 VDD VSS CDRI01
+Xload_slew108 u_cpu.ir[2] net108 VDD VSS CDRI01
+Xwire109 net111 net109 VDD VSS CDRI01
+Xmax_cap110 net111 net110 VDD VSS CDRI01
+Xload_slew111 net113 net111 VDD VSS CDRI01
+Xwire112 u_cpu.ir[1] net112 VDD VSS CDRI01
+Xload_slew113 u_cpu.ir[1] net113 VDD VSS CDRI01
+Xwire114 net117 net114 VDD VSS CDRI01
+Xmax_cap115 net117 net115 VDD VSS CDRI01
+Xmax_cap116 net118 net116 VDD VSS CDRI01
+Xmax_cap117 net118 net117 VDD VSS CDRI01
+Xwire118 u_cpu.ir[0] net118 VDD VSS CDRI01
+Xfanout119 dout[3] net119 VDD VSS CDRI01
+Xfanout120 net121 net120 VDD VSS CDRI01
+Xfanout121 dout[2] net121 VDD VSS CDRI01
+Xfanout122 dout[1] net122 VDD VSS CDRI01
+Xfanout123 dout[1] net123 VDD VSS CDRI01
+Xmax_cap124 net126 net124 VDD VSS CDRI01
+Xmax_cap125 net126 net125 VDD VSS CDRI01
+Xwire126 u_cpu.pc[4] net126 VDD VSS CDRI01
+Xfanout127 u_cpu.pc[3] net127 VDD VSS CDRI01
+Xmax_cap128 net127 net128 VDD VSS CDRI01
+Xmax_cap129 net127 net129 VDD VSS CDRI01
+Xfanout130 net132 net130 VDD VSS CDRI01
+Xmax_cap131 net130 net131 VDD VSS CDRI01
+Xfanout132 u_cpu.pc[2] net132 VDD VSS CDRI01
+Xfanout133 u_cpu.pc[1] net133 VDD VSS CDRI01
+Xmax_cap134 net135 net134 VDD VSS CDRI01
+Xwire135 net133 net135 VDD VSS CDRI01
+Xwire136 _001_ net136 VDD VSS CDRI01
+Xfanout137 u_cpu.pc[0] net137 VDD VSS CDRI01
+Xmax_cap138 net139 net138 VDD VSS CDRI01
+Xwire139 net137 net139 VDD VSS CDRI01
+Xfanout140 u_cpu.pc[0] net140 VDD VSS CDRI01
+Xclkbuf_0_clk clk clknet_0_clk VDD VSS CDRI01
+Xclkbuf_1_0__f_clk clknet_0_clk clknet_1_0__leaf_clk VDD VSS CDRI01
+Xclkbuf_1_1__f_clk clknet_0_clk clknet_1_1__leaf_clk VDD VSS CDRI01
+.ENDS acc4_core

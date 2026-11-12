@@ -1,0 +1,26 @@
+# Large / third-party / local-only
+*.ova
+SCL 1.2 µm PDK/
+backup_*/
+# Editor / OS junk
+*~
+.DS_Store
+__pycache__/
+~$*
+# SCL-owned or SCL-derived data: never publish (see README "Not in this repo")
+*.gds
+!layout/art/*.gds
+*.odb
+*.vvp
+*.lvsdb
+extracted.cir
+pnr/lef/
+layout/frame/
+gds/
+lvs/core_cells.cdl
+lvs/core_iolib_c1d.cdl
+lvs/io_pad_c1d.cdl
+EMAIL_NIELIT.txt
+FORM_VALUES.md
+Comprehensive Procedure Document*
+docs/Tapeout_Submission_*

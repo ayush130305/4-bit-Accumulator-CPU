@@ -1,0 +1,75 @@
+
+=== 0. pad frame: AIPAD00 -> OPAD04, renamed, labelled; DRC + LVS
+SWAPPED 12 x AIPAD00 -> OPAD04, wrote layout/frame/frame3mmx3mm_opad.gds
+FRAME_CDL: 12 AIPAD00 -> OPAD04, subckt frame3mmx3mm_opad -> layout/frame/frame3mmx3mm_opad.cdl
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/frame/frame3mmx3mm_opad.gds : 0 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/frame_drc/drc.lyrdb)
+LVS: MATCH (/home/ayush-jain/Desktop/4bit ACC CPU/checks/frame_lvs/lvs.lvsdb)
+
+=== 1. synthesis
+   Number of cells:                167
+
+=== 2-3. P&R + core DRC (via-fix loop; retries other placement densities if a marker won't clear)
+--- density 0.35, pass 1
+FLOW: done
+DEF2GDS: top=acc4_core cells=24 bbox=(0,0;1600,1600) -> layout/core/acc4_core.gds
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/core/acc4_core.gds : 3 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/core_drc/drc.lyrdb)
+       2  9.4.1 : Minimum via to Poly spacing violations = 1.2um
+       1   @GUIDELINE-6 AVOID PLACING vias ON diff EDGES
+--- density 0.35, pass 2
+FLOW: done
+DEF2GDS: top=acc4_core cells=24 bbox=(0,0;1600,1600) -> layout/core/acc4_core.gds
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/core/acc4_core.gds : 2 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/core_drc/drc.lyrdb)
+       1  10.1.1 : Minimum Metal2 to Metal2 spacing violations = 1.7um
+       1   @GUIDELINE-6 AVOID PLACING vias ON diff EDGES
+--- density 0.35, pass 3
+FLOW: done
+DEF2GDS: top=acc4_core cells=24 bbox=(0,0;1600,1600) -> layout/core/acc4_core.gds
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/core/acc4_core.gds : 2 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/core_drc/drc.lyrdb)
+       1  10.1.1 : Minimum Metal2 to Metal2 spacing violations = 1.7um
+       1   @GUIDELINE-6 AVOID PLACING vias ON diff EDGES
+--- density 0.32, pass 1
+FLOW: edge stripe VSS at y=998.35, 36 vias
+P&R failed: pnr/acc4_core/pnr.log
+--- density 0.38, pass 1
+FLOW: done
+DEF2GDS: top=acc4_core cells=24 bbox=(0,0;1600,1600) -> layout/core/acc4_core.gds
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/core/acc4_core.gds : 2 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/core_drc/drc.lyrdb)
+       2   @GUIDELINE-6 AVOID PLACING vias ON diff EDGES
+--- density 0.38, pass 2
+FLOW: done
+DEF2GDS: top=acc4_core cells=24 bbox=(0,0;1600,1600) -> layout/core/acc4_core.gds
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/core/acc4_core.gds : 1 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/core_drc/drc.lyrdb)
+       1  9.4.1 : Minimum via to Poly spacing violations = 1.2um
+--- density 0.38, pass 3
+FLOW: done
+DEF2GDS: top=acc4_core cells=24 bbox=(0,0;1600,1600) -> layout/core/acc4_core.gds
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/core/acc4_core.gds : 0 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/core_drc/drc.lyrdb)
+core DRC clean at density 0.38
+
+=== 4. core LVS
+CDL_FILTER: kept 68 subckts, dropped 25 -> lvs/core_cells.cdl
+V2SPICE: acc4_core 23 ports 310 instances 0 unconnected pins -> lvs/acc4_core.cir
+LVS: MATCH (/home/ayush-jain/Desktop/4bit ACC CPU/checks/core_lvs/lvs.lvsdb)
+
+=== 5. chip assembly (OS0000)
+SIDE S: addr_pn[0]@334.9, clk@390.8, addr_pn[1]@446.6, rst_n@502.4, addr_pn[2]@558.3, run@614.1, addr_pn[3]@670.0
+SIDE N: dout_pn[1]@2665.1, din[3]@2609.2, dout_pn[2]@2553.4, din[4]@2497.6, dout_pn[3]@2441.7, din[5]@2385.8, rd_pn@2330.0
+SIDE W: din[6]@334.9, we_pn@401.9, din[7]@468.9, halt_pn@536.0, VDD@603.0, VSS@670.0
+SIDE E: din[0]@2665.1, addr_pn[4]@2609.2, din[1]@2553.4, dout_pn[0]@2497.6, din[2]@2441.7, VDD@2385.8, VSS@2330.0
+CHIP: top=OS0000 bbox=(0,0;3000,3000) -> layout/chip/OS0000.gds
+CDL: lvs/chip.cdl (frame frame3mmx3mm_opad, core acc4_core)
+
+=== 6. chip DRC + LVS
+DRC /home/ayush-jain/Desktop/4bit ACC CPU/layout/chip/OS0000.gds : 0 violation(s)  (report /home/ayush-jain/Desktop/4bit ACC CPU/checks/chip_drc/drc.lyrdb)
+LVS: MATCH (/home/ayush-jain/Desktop/4bit ACC CPU/checks/chip_lvs/lvs.lvsdb)
+
+=== 7. RCX / STA / SDF post-layout simulation
+STA min: WNS(setup) 77.01733513381907 ns, WNS(hold) 2.034875880948117 ns, TNS 0.0
+STA typ: WNS(setup) 75.55681449915784 ns, WNS(hold) 3.2783618969670814 ns, TNS 0.0
+STA max: WNS(setup) 74.96170651941853 ns, WNS(hold) 3.6531303460709594 ns, TNS 0.0
+post-layout SDF sim (min): ALL TESTS PASSED
+  sdf warnings: postlayout_min.log:0 postlayout_min.compile.log:0
+
+real	15m1.846s
+user	0m42.182s
+sys	0m4.538s

@@ -1,0 +1,40 @@
+Startpoint: _288_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: addr_pn[2] (output port clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock CLK (rise edge)
+   0.000    0.000   clock source latency
+   0.000    0.000 ^ clk (in)
+   0.736    0.736 ^ clkbuf_0_clk/Q (CDRI01)
+   0.960    1.695 ^ clkbuf_1_0__f_clk/Q (CDRI01)
+   0.000    1.696 ^ _288_/C (DFCL11)
+   2.920    4.616 v _288_/Q (DFCL11)
+   0.691    5.306 ^ _150_/OUT1 (INVR01)
+   1.432    6.738 v _160_/OUT1 (NOR200)
+   1.033    7.772 v max_cap74/Q (CDRI01)
+   0.924    8.695 v fanout73/Q (CDRI01)
+   0.950    9.645 v fanout70/Q (CDRI01)
+   0.824   10.470 v fanout69/Q (CDRI01)
+   0.852   11.322 v fanout66/Q (CDRI01)
+   0.933   12.254 v fanout65/Q (CDRI01)
+   0.821   13.076 v fanout63/Q (CDRI01)
+   0.741   13.817 ^ _163_/OUT1 (MX2101)
+   1.221   15.038 v u_drv_addr2/OUT1 (INVR05)
+   0.000   15.038 v addr_pn[2] (out)
+           15.038   data arrival time
+
+ 100.000  100.000   clock CLK (rise edge)
+   0.000  100.000   clock network delay (propagated)
+   0.000  100.000   clock reconvergence pessimism
+ -10.000   90.000   output external delay
+           90.000   data required time
+-----------------------------------------------------------
+           90.000   data required time
+          -15.038   data arrival time
+-----------------------------------------------------------
+           74.962   slack (MET)
+
+

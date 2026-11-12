@@ -1,0 +1,857 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+
+-- Executing script file `syn/synth_acc4.ys' --
+
+1. Executing Liberty frontend: /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lib/c1d_core_typ.lib
+Imported 63 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: rtl/acc4_alu.v
+Parsing Verilog input from `rtl/acc4_alu.v' to AST representation.
+Generating RTLIL representation for module `\acc4_alu'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/acc4_cpu.v
+Parsing Verilog input from `rtl/acc4_cpu.v' to AST representation.
+Generating RTLIL representation for module `\acc4_cpu'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \acc4_cpu
+Used module:     \acc4_alu
+
+4.2. Analyzing design hierarchy..
+Top module:  \acc4_cpu
+Used module:     \acc4_alu
+Removed 0 unused modules.
+
+5. Executing SYNTH pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1.1. Analyzing design hierarchy..
+Top module:  \acc4_cpu
+Used module:     \acc4_alu
+
+5.1.2. Analyzing design hierarchy..
+Top module:  \acc4_cpu
+Used module:     \acc4_alu
+Removed 0 unused modules.
+
+5.2. Executing PROC pass (convert processes to netlists).
+
+5.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$rtl/acc4_cpu.v:83$12 in module acc4_cpu.
+Marked 2 switch rules as full_case in process $proc$rtl/acc4_cpu.v:63$11 in module acc4_cpu.
+Marked 1 switch rules as full_case in process $proc$rtl/acc4_alu.v:26$5 in module acc4_alu.
+Removed a total of 0 dead cases.
+
+5.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 5 assignments to connections.
+
+5.2.4. Executing PROC_INIT pass (extract init attributes).
+
+5.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+
+5.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+5.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+     1/4: $0\acc[3:0]
+     2/4: $0\ir[7:0]
+     3/4: $0\pc[4:0]
+     4/4: $0\state[1:0]
+Creating decoders for process `\acc4_cpu.$proc$rtl/acc4_cpu.v:63$11'.
+     1/5: $2\rd[0:0]
+     2/5: $2\we[0:0]
+     3/5: $1\rd[0:0]
+     4/5: $1\we[0:0]
+     5/5: $1\addr[4:0]
+Creating decoders for process `\acc4_alu.$proc$rtl/acc4_alu.v:26$5'.
+     1/2: $1\cout[0:0]
+     2/2: $1\y[3:0]
+
+5.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\acc4_cpu.\addr' from process `\acc4_cpu.$proc$rtl/acc4_cpu.v:63$11'.
+No latch inferred for signal `\acc4_cpu.\rd' from process `\acc4_cpu.$proc$rtl/acc4_cpu.v:63$11'.
+No latch inferred for signal `\acc4_cpu.\we' from process `\acc4_cpu.$proc$rtl/acc4_cpu.v:63$11'.
+No latch inferred for signal `\acc4_alu.\y' from process `\acc4_alu.$proc$rtl/acc4_alu.v:26$5'.
+No latch inferred for signal `\acc4_alu.\cout' from process `\acc4_alu.$proc$rtl/acc4_alu.v:26$5'.
+
+5.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\acc4_cpu.\state' using process `\acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+  created $adff cell `$procdff$94' with positive edge clock and positive level reset.
+Creating register for signal `\acc4_cpu.\pc' using process `\acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+  created $adff cell `$procdff$99' with positive edge clock and positive level reset.
+Creating register for signal `\acc4_cpu.\ir' using process `\acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+  created $adff cell `$procdff$104' with positive edge clock and positive level reset.
+Creating register for signal `\acc4_cpu.\acc' using process `\acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+  created $adff cell `$procdff$109' with positive edge clock and positive level reset.
+
+5.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+Removing empty process `acc4_cpu.$proc$rtl/acc4_cpu.v:83$12'.
+Found and cleaned up 2 empty switches in `\acc4_cpu.$proc$rtl/acc4_cpu.v:63$11'.
+Removing empty process `acc4_cpu.$proc$rtl/acc4_cpu.v:63$11'.
+Found and cleaned up 1 empty switch in `\acc4_alu.$proc$rtl/acc4_alu.v:26$5'.
+Removing empty process `acc4_alu.$proc$rtl/acc4_alu.v:26$5'.
+Cleaned up 8 empty switches.
+
+5.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+<suppressed ~15 debug messages>
+Optimizing module acc4_alu.
+<suppressed ~2 debug messages>
+
+5.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module acc4_alu.
+<suppressed ~1 debug messages>
+
+5.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 9 unused cells and 44 unused wires.
+<suppressed ~10 debug messages>
+
+5.6. Executing CHECK pass (checking for obvious problems).
+Checking module acc4_cpu...
+Found and reported 0 problems.
+
+5.7. Executing OPT pass (performing simple optimizations).
+
+5.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+5.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$62.
+    dead port 2/2 on $mux $procmux$68.
+Removed 2 multiplexer ports.
+<suppressed ~7 debug messages>
+
+5.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+    New ctrl vector for $pmux cell $procmux$18: { $procmux$22_CMP $auto$opt_reduce.cc:137:opt_pmux$112 }
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 1 changes.
+
+5.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~3 debug messages>
+
+5.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+5.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 0 changes.
+
+5.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.7.16. Finished OPT passes. (There is nothing left to do.)
+
+5.8. Executing OPT pass (performing simple optimizations).
+
+5.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+5.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 0 changes.
+
+5.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$99 ($adff) from module acc4_cpu (D = $procmux$40_Y, Q = \pc).
+Adding EN signal on $procdff$94 ($adff) from module acc4_cpu (D = $procmux$52_Y, Q = \state).
+Adding EN signal on $procdff$109 ($adff) from module acc4_cpu (D = $procmux$18_Y, Q = \acc).
+Adding EN signal on $procdff$104 ($adff) from module acc4_cpu (D = \din, Q = \ir).
+
+5.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 6 unused cells and 6 unused wires.
+<suppressed ~7 debug messages>
+
+5.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+<suppressed ~2 debug messages>
+
+5.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 0 changes.
+
+5.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.8.16. Finished OPT passes. (There is nothing left to do.)
+
+5.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 4 bits (of 5) from port B of cell acc4_cpu.$sub$rtl/acc4_cpu.v:48$8 ($sub).
+Removed top 4 bits (of 5) from port B of cell acc4_cpu.$add$rtl/acc4_cpu.v:93$14 ($add).
+Removed top 2 bits (of 3) from port B of cell acc4_cpu.$procmux$21_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell acc4_cpu.$procmux$24_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell acc4_cpu.$procmux$61_CMP1 ($eq).
+Removed top 1 bits (of 3) from port B of cell acc4_cpu.$procmux$61_CMP2 ($eq).
+Removed top 1 bits (of 2) from port B of cell acc4_cpu.$flatten\u_alu.$procmux$88_CMP0 ($eq).
+Removed top 4 bits (of 5) from port B of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:23$4 ($add).
+Removed top 1 bits (of 5) from port Y of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:23$4 ($add).
+Removed top 1 bits (of 5) from port A of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:23$4 ($add).
+Removed top 1 bits (of 5) from port A of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:23$3 ($add).
+Removed top 1 bits (of 5) from port B of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:23$3 ($add).
+Removed top 1 bits (of 5) from port Y of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:23$3 ($add).
+Removed top 1 bits (of 5) from port A of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:22$1 ($add).
+Removed top 1 bits (of 5) from port B of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:22$1 ($add).
+Removed top 1 bits (of 5) from port Y of cell acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:22$1 ($add).
+Removed top 1 bits (of 5) from wire acc4_cpu.$flatten\u_alu.$add$rtl/acc4_alu.v:23$3_Y.
+Removed top 1 bits (of 4) from wire acc4_cpu.$flatten\u_alu.$and$rtl/acc4_alu.v:28$6_Y.
+Removed top 1 bits (of 4) from wire acc4_cpu.$flatten\u_alu.$or$rtl/acc4_alu.v:29$7_Y.
+
+5.10. Executing PEEPOPT pass (run peephole optimizers).
+
+5.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+5.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module acc4_cpu:
+  creating $macc model for $add$rtl/acc4_cpu.v:93$14 ($add).
+  creating $macc model for $flatten\u_alu.$add$rtl/acc4_alu.v:22$1 ($add).
+  creating $macc model for $flatten\u_alu.$add$rtl/acc4_alu.v:23$3 ($add).
+  creating $macc model for $flatten\u_alu.$add$rtl/acc4_alu.v:23$4 ($add).
+  creating $macc model for $sub$rtl/acc4_cpu.v:48$8 ($sub).
+  merging $macc model for $flatten\u_alu.$add$rtl/acc4_alu.v:23$3 into $flatten\u_alu.$add$rtl/acc4_alu.v:23$4.
+  creating $alu model for $macc $flatten\u_alu.$add$rtl/acc4_alu.v:23$4.
+  creating $alu model for $macc $sub$rtl/acc4_cpu.v:48$8.
+  creating $alu model for $macc $flatten\u_alu.$add$rtl/acc4_alu.v:22$1.
+  creating $alu model for $macc $add$rtl/acc4_cpu.v:93$14.
+  creating $alu cell for $add$rtl/acc4_cpu.v:93$14: $auto$alumacc.cc:495:replace_alu$134
+  creating $alu cell for $flatten\u_alu.$add$rtl/acc4_alu.v:22$1: $auto$alumacc.cc:495:replace_alu$137
+  creating $alu cell for $sub$rtl/acc4_cpu.v:48$8: $auto$alumacc.cc:495:replace_alu$140
+  creating $alu cell for $flatten\u_alu.$add$rtl/acc4_alu.v:23$4: $auto$alumacc.cc:495:replace_alu$143
+  created 4 $alu and 0 $macc cells.
+
+5.13. Executing SHARE pass (SAT-based resource sharing).
+
+5.14. Executing OPT pass (performing simple optimizations).
+
+5.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 0 changes.
+
+5.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+5.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~6 debug messages>
+
+5.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 0 changes.
+
+5.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.14.16. Finished OPT passes. (There is nothing left to do.)
+
+5.15. Executing MEMORY pass.
+
+5.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.17. Executing OPT pass (performing simple optimizations).
+
+5.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+<suppressed ~10 debug messages>
+
+5.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+5.17.5. Finished fast OPT passes.
+
+5.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5.19. Executing OPT pass (performing simple optimizations).
+
+5.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+5.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+    Consolidated identical input bits for $mux cell $procmux$48:
+      Old ports: A=2'00, B=2'10, Y=$procmux$48_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$48_Y [1]
+      New connections: $procmux$48_Y [0] = 1'0
+  Optimizing cells in module \acc4_cpu.
+    Consolidated identical input bits for $mux cell $procmux$50:
+      Old ports: A=2'00, B=$procmux$48_Y, Y=$procmux$50_Y
+      New ports: A=1'0, B=$procmux$48_Y [1], Y=$procmux$50_Y [1]
+      New connections: $procmux$50_Y [0] = 1'0
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 2 changes.
+
+5.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.19.6. Executing OPT_SHARE pass.
+
+5.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+<suppressed ~2 debug messages>
+
+5.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+5.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 0 changes.
+
+5.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.19.14. Executing OPT_SHARE pass.
+
+5.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+5.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acc4_cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+5.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acc4_cpu.
+Performed a total of 0 changes.
+
+5.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.19.22. Executing OPT_SHARE pass.
+
+5.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+
+5.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.19.26. Finished OPT passes. (There is nothing left to do.)
+
+5.20. Executing TECHMAP pass (map to technology primitives).
+
+5.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.20.2. Continuing TECHMAP pass.
+Using template $paramod$740b056ede97228d3eae64ea2fdc81f0a33e0fe7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $adffe.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using template $paramod$c2e415ef15bc3ccd2723772353a6b450d3d76206\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $or.
+Using template $paramod$dc04b7d98e503a7bab16fce2df70e6e2c5ca34d6\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~536 debug messages>
+
+5.21. Executing OPT pass (performing simple optimizations).
+
+5.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+<suppressed ~125 debug messages>
+
+5.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+<suppressed ~96 debug messages>
+Removed a total of 32 cells.
+
+5.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 18 unused cells and 235 unused wires.
+<suppressed ~19 debug messages>
+
+5.21.5. Finished fast OPT passes.
+
+5.22. Executing ABC pass (technology mapping using ABC).
+
+5.22.1. Extracting gate netlist of module `\acc4_cpu' to `<abc-temp-dir>/input.blif'..
+Extracted 180 gates and 206 wires to a netlist network with 24 inputs and 22 outputs.
+
+5.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        4
+ABC RESULTS:            ANDNOT cells:       42
+ABC RESULTS:               MUX cells:       21
+ABC RESULTS:              NAND cells:        6
+ABC RESULTS:               NOR cells:       12
+ABC RESULTS:               NOT cells:        5
+ABC RESULTS:                OR cells:       21
+ABC RESULTS:             ORNOT cells:        7
+ABC RESULTS:              XNOR cells:        7
+ABC RESULTS:               XOR cells:       16
+ABC RESULTS:        internal signals:      160
+ABC RESULTS:           input signals:       24
+ABC RESULTS:          output signals:       22
+Removing temp directory.
+
+5.23. Executing OPT pass (performing simple optimizations).
+
+5.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acc4_cpu.
+
+5.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acc4_cpu'.
+Removed a total of 0 cells.
+
+5.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 0 unused cells and 124 unused wires.
+<suppressed ~5 debug messages>
+
+5.23.5. Finished fast OPT passes.
+
+5.24. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `acc4_cpu'. Setting top module to acc4_cpu.
+
+5.24.1. Analyzing design hierarchy..
+Top module:  \acc4_cpu
+
+5.24.2. Analyzing design hierarchy..
+Top module:  \acc4_cpu
+Removed 0 unused modules.
+
+5.25. Printing statistics.
+
+=== acc4_cpu ===
+
+   Number of wires:                152
+   Number of wire bits:            204
+   Number of public wires:          20
+   Number of public wire bits:      70
+   Number of ports:                  9
+   Number of port bits:             23
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                161
+     $_ANDNOT_                      42
+     $_AND_                          4
+     $_DFFE_PN0P_                   19
+     $_MUX_                         21
+     $_NAND_                         6
+     $_NOR_                         12
+     $_NOT_                          5
+     $_ORNOT_                        7
+     $_OR_                          21
+     $_XNOR_                         7
+     $_XOR_                         16
+     $scopeinfo                      1
+
+5.26. Executing CHECK pass (checking for obvious problems).
+Checking module acc4_cpu...
+Found and reported 0 problems.
+
+6. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell DFFL11 (noninv, pins=4, area=6.67) is a direct match for cell type $_DFF_P_.
+  cell DFCL11 (noninv, pins=5, area=8.00) is a direct match for cell type $_DFF_PN0_.
+  cell DFPR11 (noninv, pins=5, area=8.40) is a direct match for cell type $_DFF_PN1_.
+  cell DFPC11 (noninv, pins=6, area=9.67) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \DFFL11 _DFF_P_ (.C( C), .D( D), .Q( Q), .QB(~Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \DFCL11 _DFF_PN0_ (.C( C), .CLRB( R), .D( D), .Q( Q), .QB(~Q));
+    \DFPR11 _DFF_PN1_ (.C( C), .D( D), .PRB( R), .Q( Q), .QB(~Q));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \DFPC11 _DFFSR_PNN_ (.C( C), .CLRB( R), .D( D), .PRB( S), .Q( Q), .QB(~Q));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+6.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\acc4_cpu':
+  mapped 19 $_DFF_PN0_ cells to \DFCL11 cells.
+
+7. Executing ABC pass (technology mapping using ABC).
+
+7.1. Extracting gate netlist of module `\acc4_cpu' to `<abc-temp-dir>/input.blif'..
+Extracted 160 gates and 191 wires to a netlist network with 31 inputs and 27 outputs.
+
+7.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -X NND201 -w /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lib/c1d_core_typ.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFCL11".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFFL11".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFPC11".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "DFPR11".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LTCH11".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LTCL11".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LTPC11".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "LTPR11".
+ABC: Scl_LibertyReadGenlib() skipped cell "NND201" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TBUF01".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "TINV01".
+ABC: Library "c1d_core_typ" from "/home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lib/c1d_core_typ.lib" has 52 cells (10 skipped: 8 seq; 2 tri-state; 0 no func; 1 dont_use).  Time =     0.01 sec
+ABC: Memory =    1.75 MB. Time =     0.01 sec
+ABC: Gates with more than 2 outputs are not supported.
+ABC: Gates with more than 2 outputs are not supported.
+ABC: Gates with more than 2 outputs are not supported.
+ABC: Gates with more than 2 outputs are not supported.
+ABC: Warning: Detected 9 multi-output gates (for example, "CDRI02").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+7.1.2. Re-integrating ABC results.
+ABC RESULTS:            ADNR01 cells:        9
+ABC RESULTS:            ADOR16 cells:        2
+ABC RESULTS:            AND201 cells:        5
+ABC RESULTS:            AND401 cells:        3
+ABC RESULTS:            INVR01 cells:       15
+ABC RESULTS:            MX2101 cells:       25
+ABC RESULTS:            NND300 cells:        8
+ABC RESULTS:            NOR200 cells:       21
+ABC RESULTS:            NOR300 cells:       12
+ABC RESULTS:            OR2101 cells:       13
+ABC RESULTS:            OR4101 cells:        2
+ABC RESULTS:            ORND01 cells:       11
+ABC RESULTS:            XNR201 cells:        9
+ABC RESULTS:            XOR201 cells:        1
+ABC RESULTS:        internal signals:      133
+ABC RESULTS:           input signals:       31
+ABC RESULTS:          output signals:       27
+Removing temp directory.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acc4_cpu..
+Removed 1 unused cells and 201 unused wires.
+<suppressed ~10 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module acc4_cpu...
+Found and reported 0 problems.
+
+10. Printing statistics.
+
+=== acc4_cpu ===
+
+   Number of wires:                159
+   Number of wire bits:            185
+   Number of public wires:          12
+   Number of public wire bits:      38
+   Number of ports:                  9
+   Number of port bits:             23
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                155
+     ADNR01                          9
+     ADOR16                          2
+     AND201                          5
+     AND401                          3
+     DFCL11                         19
+     INVR01                         15
+     MX2101                         25
+     NND300                          8
+     NOR200                         21
+     NOR300                         12
+     OR2101                         13
+     OR4101                          2
+     ORND01                         11
+     XNR201                          9
+     XOR201                          1
+
+   Chip area for module '\acc4_cpu': 424.390000
+     of which used for sequential elements: 152.000000 (35.82%)
+
+11. Executing Verilog backend.
+
+11.1. Executing BMUXMAP pass.
+
+11.2. Executing DEMUXMAP pass.
+Dumping module `\acc4_cpu'.
+
+End of script. Logfile hash: acd63915e5, CPU: user 0.10s system 0.01s, MEM: 18.75 MB peak
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+Time spent: 53% 2x abc (0 sec), 10% 22x opt_expr (0 sec), ...

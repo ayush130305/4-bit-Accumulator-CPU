@@ -1,0 +1,9 @@
+2026-11-08 10:41:01 +0530: Starting running SCL C1D Klayout LVS runset on /home/ayush-jain/Desktop/4bit ACC CPU/submission/OS0084_acc4cpu_08112026_v1.gds with top cell OS0084
+2026-11-08 10:41:01 +0530: deep mode is enabled.
+2026-11-08 10:41:01 +0530: Netlist file: /home/ayush-jain/Desktop/4bit ACC CPU/lvs/OS0084.cdl
+2026-11-08 10:41:01 +0530: Extracted netlist file: /home/ayush-jain/Desktop/4bit ACC CPU/checks/final_lvs/extracted.cir
+2026-11-08 10:41:01 +0530: Final report: /home/ayush-jain/Desktop/4bit ACC CPU/checks/final_lvs/lvs.lvsdb
+2026-11-08 10:41:02 +0530: LVS Total Run time 1.224211 seconds
+2026-11-08 10:41:02 +0530: ==========================================
+2026-11-08 10:41:02 +0530: INFO : Congratulations! Netlists match.
+2026-11-08 10:41:02 +0530: ==========================================

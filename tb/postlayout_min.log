@@ -1,0 +1,42 @@
+VCD info: dumpfile tb_acc4_cpu.vcd opened for output.
+--- Test 1: full program ---
+pass addr after reset = 00
+pass rd in FETCH = 01
+pass cycles to HALT = 20
+pass mem25 (LOAD/ADD/STORE) = 08
+pass mem26 (AND/OR) = 0b
+pass mem28 (ADD wrap, JMP) = 02
+pass mem29 (SUB borrow) = 0f
+pass mem30 sentinel = 55
+pass halt = 01
+pass addr at halt = 12
+--- Test 2: HALT holds ---
+pass still halted = 01
+pass addr held = 12
+--- Test 3: run freeze ---
+pass rd gated by run = 00
+pass we gated by run = 00
+pass addr frozen = 19
+pass mem25 untouched = ee
+pass cycles with freeze = 20
+pass mem25 (LOAD/ADD/STORE) = 08
+pass mem26 (AND/OR) = 0b
+pass mem28 (ADD wrap, JMP) = 02
+pass mem29 (SUB borrow) = 0f
+pass mem30 sentinel = 55
+pass halt = 01
+pass addr at halt = 12
+--- Test 4: async reset ---
+pass addr async reset = 00
+pass halt async reset = 00
+pass dout async reset = 00
+pass cycles after reset = 20
+pass mem25 (LOAD/ADD/STORE) = 08
+pass mem26 (AND/OR) = 0b
+pass mem28 (ADD wrap, JMP) = 02
+pass mem29 (SUB borrow) = 0f
+pass mem30 sentinel = 55
+pass halt = 01
+pass addr at halt = 12
+ALL TESTS PASSED
+tb_acc4_cpu.v:233: $finish called at 12020000 (1ps)

@@ -1,0 +1,28 @@
+# synth_acc4.ys - Yosys synthesis of acc4_cpu to SCL 1.2 um C1D standard cells
+# Liberty path assumes the PDK is unzipped at /home/ayush-jain/scl/my_dtech (edit if moved).
+# Run from the project root: yosys syn/synth_acc4.ys
+# Kept to plain commands so it also runs on Yosys 0.9 (the SCL-tested version).
+
+# Load std cells as black boxes so pin directions are known to check/stat
+read_liberty -lib /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lib/c1d_core_typ.lib
+
+# Read plain Verilog-2005 RTL
+read_verilog rtl/acc4_alu.v
+read_verilog rtl/acc4_cpu.v
+
+# Generic synthesis, ALU flattened in; -nofsm keeps the RTL state encoding (reset = 00)
+hierarchy -check -top acc4_cpu
+synth -flatten -nofsm -top acc4_cpu
+
+# Map flip-flops (async-clear DFF -> DFCL11) and logic to the C1D library.
+# NND201 is excluded: routers land via1 on its pins too close to its contact/poly (SCL DRC 9.3.1/9.4.1).
+dfflibmap -liberty /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lib/c1d_core_typ.lib
+abc -liberty /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lib/c1d_core_typ.lib -dont_use NND201
+
+# Clean up and report
+opt_clean -purge
+check -assert
+stat -liberty /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lib/c1d_core_typ.lib
+
+# Gate-level netlist for simulation and OpenLane
+write_verilog -noattr syn/acc4_cpu_netlist.v

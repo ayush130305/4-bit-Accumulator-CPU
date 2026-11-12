@@ -1,0 +1,32 @@
+Startpoint: run (input port clocked by CLK)
+Endpoint: rd_pn (output port clocked by CLK)
+Path Group: CLK
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock CLK (rise edge)
+   0.000    0.000   clock network delay (propagated)
+  10.000   10.000 ^ input external delay
+   0.000   10.000 ^ run (in)
+   0.179   10.179 v _149_/OUT1 (INVR01)
+   1.197   11.376 v _166_/OUT1 (OR2101)
+   0.647   12.023 ^ _169_/OUT1 (ADNR01)
+   0.302   12.326 ^ wire18/Q (CDRI01)
+   0.320   12.645 ^ wire17/Q (CDRI01)
+   0.337   12.982 v u_drv_rd/OUT1 (INVR05)
+   0.001   12.983 v rd_pn (out)
+           12.983   data arrival time
+
+ 100.000  100.000   clock CLK (rise edge)
+   0.000  100.000   clock network delay (propagated)
+   0.000  100.000   clock reconvergence pessimism
+ -10.000   90.000   output external delay
+           90.000   data required time
+-----------------------------------------------------------
+           90.000   data required time
+          -12.983   data arrival time
+-----------------------------------------------------------
+           77.017   slack (MET)
+
+

@@ -1,0 +1,5 @@
+PASS single top cell named OS0084 (found ['OS0084'])
+PASS bottom-left at (0,0) (bbox (0,0;3000,3000))
+PASS top-right on even whole um (3000.000, 3000.000)
+FAIL all vertices / placements on 0.005 um grid: off-grid ADNR01(2), AND201(4), AND301(7), AND401(6), AND501(6), AOI401(2), CDRI01(2), DFCL11(28), INVR01(2), INVR05(6), IPAD00(148), MX2101(6), NND300(3), NOR200(2), NOR300(2), OPAD04(95), OR2101(4), OR3101(2), OR4101(3), ORND01(2), OS0084(998), PVDD01(44), PVSS01(27), XNR201(2), XOR201(2), char_I0(198), char_I4(264), char_I8(396), frame3mmx3mm_opad(3)
+GDS_RULES: FAILURES

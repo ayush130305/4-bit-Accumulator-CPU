@@ -1,0 +1,114 @@
+OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lef/tech_c1d.lef
+[INFO ODB-0223]     Created 6 technology layers
+[INFO ODB-0224]     Created 1 technology vias
+[INFO ODB-0226] Finished LEF file:  /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lef/tech_c1d.lef
+[INFO ODB-0222] Reading LEF file: /home/ayush-jain/acc4/pnr/lef/core_c1d_snapped.lef
+[INFO ODB-0225]     Created 68 library cells
+[INFO ODB-0226] Finished LEF file:  /home/ayush-jain/acc4/pnr/lef/core_c1d_snapped.lef
+[WARNING IFP-0028] Core area lower left (100.000, 100.000) snapped to (100.000, 146.100).
+[INFO IFP-0001] Added 27 rows of 140000 site CORE with height 1.
+FLOW: rows kept = 14
+[INFO PPL-0070] Pin addr_pn[0] placed at (197um, 3um).
+[INFO PPL-0070] Pin clk placed at (361um, 3um).
+[INFO PPL-0070] Pin addr_pn[1] placed at (588um, 3um).
+[INFO PPL-0070] Pin rst_n placed at (772um, 3um).
+[INFO PPL-0070] Pin addr_pn[2] placed at (1020um, 3um).
+[INFO PPL-0070] Pin run placed at (1209um, 3um).
+[INFO PPL-0070] Pin addr_pn[3] placed at (1449um, 3um).
+[INFO PPL-0070] Pin rd_pn placed at (197um, 1597um).
+[INFO PPL-0070] Pin din[5] placed at (361um, 1597um).
+[INFO PPL-0070] Pin dout_pn[3] placed at (588um, 1597um).
+[INFO PPL-0070] Pin din[4] placed at (772um, 1597um).
+[INFO PPL-0070] Pin dout_pn[2] placed at (1020um, 1597um).
+[INFO PPL-0070] Pin din[3] placed at (1209um, 1597um).
+[INFO PPL-0070] Pin dout_pn[1] placed at (1449um, 1597um).
+[INFO PPL-0070] Pin halt_pn placed at (3um, 376um).
+[INFO PPL-0070] Pin din[7] placed at (3um, 772um).
+[INFO PPL-0070] Pin we_pn placed at (3um, 1108um).
+[INFO PPL-0070] Pin din[6] placed at (3um, 1352um).
+[INFO PPL-0070] Pin din[0] placed at (1597um, 148um).
+[INFO PPL-0070] Pin addr_pn[4] placed at (1597um, 376um).
+[INFO PPL-0070] Pin din[1] placed at (1597um, 772um).
+[INFO PPL-0070] Pin dout_pn[0] placed at (1597um, 1108um).
+[INFO PPL-0070] Pin din[2] placed at (1597um, 1352um).
+[INFO PDN-0001] Inserting grid: Core
+FLOW: edge stripe VDD at y=608.75, 36 vias
+FLOW: edge stripe VSS at y=998.35, 36 vias
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: 10 48700
+[INFO GPL-0004] CoreAreaLxLy: 100000 146100
+[INFO GPL-0005] CoreAreaUxUy: 1500000 1461000
+[INFO GPL-0006] NumInstances: 180
+[INFO GPL-0007] NumPlaceInstances: 167
+[INFO GPL-0008] NumFixedInstances: 0
+[INFO GPL-0009] NumDummyInstances: 13
+[INFO GPL-0010] NumNets: 197
+[INFO GPL-0011] NumPins: 612
+[INFO GPL-0012] DieAreaLxLy: 0 0
+[INFO GPL-0013] DieAreaUxUy: 1600000 1600000
+[INFO GPL-0014] CoreAreaLxLy: 100000 146100
+[INFO GPL-0015] CoreAreaUxUy: 1500000 1461000
+[INFO GPL-0016] CoreArea: 1840860000000
+[INFO GPL-0017] NonPlaceInstsArea: 886340000000
+[INFO GPL-0018] PlaceInstsArea: 279917860000
+[INFO GPL-0019] Util(%): 29.33
+[INFO GPL-0020] StdInstsArea: 279917860000
+[INFO GPL-0021] MacroInstsArea: 0
+[InitialPlace]  Iter: 1 CG residual: 0.00000011 HPWL: 56105400
+[InitialPlace]  Iter: 2 CG residual: 0.00000011 HPWL: 46362596
+[InitialPlace]  Iter: 3 CG residual: 0.00000007 HPWL: 46537418
+[InitialPlace]  Iter: 4 CG residual: 0.00000009 HPWL: 46647326
+[InitialPlace]  Iter: 5 CG residual: 0.00000009 HPWL: 46648709
+[INFO GPL-0031] FillerInit: NumGCells: 220
+[INFO GPL-0032] FillerInit: NumGNets: 197
+[INFO GPL-0033] FillerInit: NumGPins: 612
+[INFO GPL-0023] TargetDensity: 0.38
+[INFO GPL-0024] AveragePlaceInstArea: 1676154850
+[INFO GPL-0025] IdealBinArea: 4410933760
+[INFO GPL-0026] IdealBinCnt: 417
+[INFO GPL-0027] TotalBinArea: 1840860000000
+[INFO GPL-0028] BinCnt: 16 16
+[INFO GPL-0029] BinSize: 87500 82182
+[INFO GPL-0030] NumBins: 256
+[NesterovSolve] Iter: 1 overflow: 0.879651 HPWL: 31463635
+[NesterovSolve] Iter: 10 overflow: 0.726241 HPWL: 40604882
+[NesterovSolve] Iter: 20 overflow: 0.722463 HPWL: 40559796
+[NesterovSolve] Iter: 30 overflow: 0.724754 HPWL: 40532027
+[NesterovSolve] Iter: 40 overflow: 0.724717 HPWL: 40464402
+[NesterovSolve] Iter: 50 overflow: 0.724846 HPWL: 40500861
+[NesterovSolve] Iter: 60 overflow: 0.724946 HPWL: 40515056
+[NesterovSolve] Iter: 70 overflow: 0.725128 HPWL: 40496800
+[NesterovSolve] Iter: 80 overflow: 0.724933 HPWL: 40505694
+[NesterovSolve] Iter: 90 overflow: 0.724601 HPWL: 40521163
+[NesterovSolve] Iter: 100 overflow: 0.724358 HPWL: 40527925
+[NesterovSolve] Iter: 110 overflow: 0.723927 HPWL: 40547615
+[NesterovSolve] Iter: 120 overflow: 0.723161 HPWL: 40603716
+[NesterovSolve] Iter: 130 overflow: 0.721968 HPWL: 40681177
+[NesterovSolve] Iter: 140 overflow: 0.719967 HPWL: 40789007
+[NesterovSolve] Iter: 150 overflow: 0.716922 HPWL: 40933819
+[NesterovSolve] Iter: 160 overflow: 0.711138 HPWL: 41141539
+[NesterovSolve] Iter: 170 overflow: 0.70033 HPWL: 41477534
+[NesterovSolve] Iter: 180 overflow: 0.686155 HPWL: 41929136
+[NesterovSolve] Iter: 190 overflow: 0.671559 HPWL: 42521632
+[NesterovSolve] Iter: 200 overflow: 0.653011 HPWL: 43290145
+[NesterovSolve] Iter: 210 overflow: 0.630626 HPWL: 44328326
+[NesterovSolve] Iter: 220 overflow: 0.603212 HPWL: 45376774
+[NesterovSolve] Iter: 230 overflow: 0.56271 HPWL: 46353960
+[NesterovSolve] Iter: 240 overflow: 0.524287 HPWL: 47601318
+[NesterovSolve] Iter: 250 overflow: 0.466131 HPWL: 48230088
+[NesterovSolve] Iter: 260 overflow: 0.421798 HPWL: 49057055
+[NesterovSolve] Iter: 270 overflow: 0.379783 HPWL: 50213231
+[NesterovSolve] Iter: 280 overflow: 0.332733 HPWL: 50732324
+[NesterovSolve] Iter: 290 overflow: 0.301179 HPWL: 51560009
+[NesterovSolve] Iter: 300 overflow: 0.272884 HPWL: 52374724
+[NesterovSolve] Iter: 310 overflow: 0.248958 HPWL: 53024214
+[NesterovSolve] Iter: 320 overflow: 0.224096 HPWL: 53510046
+[NesterovSolve] Iter: 330 overflow: 0.195129 HPWL: 54020495
+[NesterovSolve] Iter: 340 overflow: 0.17036 HPWL: 54556683
+[NesterovSolve] Iter: 350 overflow: 0.147199 HPWL: 54969676
+[NesterovSolve] Iter: 360 overflow: 0.118813 HPWL: 55348794
+[NesterovSolve] Finished with Overflow: 0.099445
+[INFO RSZ-0058] Using max wire length 35215um.

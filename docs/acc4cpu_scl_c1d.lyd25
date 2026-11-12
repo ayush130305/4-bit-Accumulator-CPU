@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<klayout-macro>
+ <description>acc4cpu - SCL C1D 2.5D stack (illustrative heights)</description>
+ <version/>
+ <category>d25</category>
+ <prolog/>
+ <epilog/>
+ <doc/>
+ <autorun>false</autorun>
+ <autorun-early>false</autorun-early>
+ <shortcut/>
+ <show-in-menu>true</show-in-menu>
+ <group-name>d25_scripts</group-name>
+ <menu-path>tools_menu.d25.end</menu-path>
+ <interpreter>dsl</interpreter>
+ <dsl-interpreter-name>d25-dsl-xml</dsl-interpreter-name>
+ <text># SCL 1.2 um C1D layer stack for KLayout's 2.5D view.
+# Heights are ILLUSTRATIVE (SCL does not publish thicknesses); order follows the process:
+# well -> diffusion/implants -> poly -> contact -> metal1 -> via1 -> metal2 -> pad opening.
+# Colours are taken from SCL's layer properties via "like:".
+z(input(1, 0),  zstart: -0.8, height: 0.8, like: "1/0",  name: "nwell")
+z(input(2, 0),  zstart: 0.0,  height: 0.25, like: "2/0", name: "diffusion")
+z(input(5, 0),  zstart: 0.0,  height: 0.05, like: "5/0", name: "boron (p+)")
+z(input(4, 0),  zstart: 0.25, height: 0.45, like: "4/0", name: "poly")
+z(input(7, 0),  zstart: 0.25, height: 1.0,  like: "7/0", name: "contact")
+z(input(8, 0),  zstart: 1.25, height: 0.6,  like: "8/0", name: "metal1")
+z(input(9, 0),  zstart: 1.85, height: 0.8,  like: "9/0", name: "via1")
+z(input(10, 0), zstart: 2.65, height: 0.9,  like: "10/0", name: "metal2")
+z(input(11, 0), zstart: 3.55, height: 0.4,  like: "11/0", name: "pad opening")
+</text>
+</klayout-macro>

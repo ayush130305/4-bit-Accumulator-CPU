@@ -1,0 +1,34 @@
+OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lef/tech_c1d.lef
+[INFO ODB-0223]     Created 6 technology layers
+[INFO ODB-0224]     Created 1 technology vias
+[INFO ODB-0226] Finished LEF file:  /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/digital_c1d/lef/tech_c1d.lef
+[INFO ODB-0222] Reading LEF file: /home/ayush-jain/acc4/pnr/lef/core_c1d_snapped.lef
+[INFO ODB-0225]     Created 68 library cells
+[INFO ODB-0226] Finished LEF file:  /home/ayush-jain/acc4/pnr/lef/core_c1d_snapped.lef
+[INFO ODB-0127] Reading DEF file: /home/ayush-jain/acc4/pnr/acc4_core/4_route.def
+[INFO ODB-0128] Design: acc4_core
+[INFO ODB-0130]     Created 23 pins.
+[INFO ODB-0131]     Created 310 components and 1495 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 620 connections.
+[INFO ODB-0133]     Created 340 nets and 875 connections.
+[INFO ODB-0134] Finished DEF file: /home/ayush-jain/acc4/pnr/acc4_core/4_route.def
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0008] extracting parasitics of acc4_core ...
+[INFO RCX-0435] Reading extraction model file /home/ayush-jain/scl/my_dtech/Open_Source_SCL_1.2micron_PDK_digital/open_source_scl_c1d/open_pdks/sclc1d/libs.tech/openrcx/scl_c1d.rcx.lib ...
+[INFO RCX-0436] RC segment generation acc4_core (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 792 rc segments
+[INFO RCX-0439] Coupling Cap extraction acc4_core ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0043] 3518 wires to be extracted
+[INFO RCX-0442] 51% completion -- 1798 wires have been extracted
+[INFO RCX-0442] 100% completion -- 3518 wires have been extracted
+[INFO RCX-0045] Extract 340 nets, 1116 rsegs, 1116 caps, 2469 ccs
+[INFO RCX-0015] Finished extracting acc4_core.
+[INFO RCX-0016] Writing SPEF ...
+[INFO RCX-0443] 340 nets finished
+[INFO RCX-0017] Finished writing SPEF ...
+STA max: WNS(setup) 74.96170651941853 ns, WNS(hold) 3.6531303460709594 ns, TNS 0.0

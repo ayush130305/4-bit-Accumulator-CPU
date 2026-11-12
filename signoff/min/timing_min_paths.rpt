@@ -1,0 +1,34 @@
+Startpoint: _289_ (rising edge-triggered flip-flop clocked by CLK)
+Endpoint: _289_ (rising edge-triggered flip-flop clocked by CLK)
+Path Group: CLK
+Path Type: min
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock CLK (rise edge)
+   0.000    0.000   clock source latency
+   0.000    0.000 ^ clk (in)
+   0.393    0.393 ^ clkbuf_0_clk/Q (CDRI01)
+   0.446    0.838 ^ clkbuf_1_0__f_clk/Q (CDRI01)
+   0.000    0.839 ^ _289_/C (DFCL11)
+   1.287    2.126 ^ _289_/Q (DFCL11)
+   0.986    3.112 ^ _216_/OUT1 (OR2101)
+   0.000    3.112 ^ _289_/D (DFCL11)
+            3.112   data arrival time
+
+   0.000    0.000   clock CLK (rise edge)
+   0.000    0.000   clock source latency
+   0.000    0.000 ^ clk (in)
+   0.393    0.393 ^ clkbuf_0_clk/Q (CDRI01)
+   0.446    0.838 ^ clkbuf_1_0__f_clk/Q (CDRI01)
+   0.000    0.839 ^ _289_/C (DFCL11)
+   0.000    0.839   clock reconvergence pessimism
+   0.239    1.077   library hold time
+            1.077   data required time
+-----------------------------------------------------------
+            1.077   data required time
+           -3.112   data arrival time
+-----------------------------------------------------------
+            2.035   slack (MET)
+
+
