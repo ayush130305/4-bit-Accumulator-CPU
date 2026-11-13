@@ -11,6 +11,28 @@ A 4-bit accumulator CPU taped out on SCL's 1.2 um C1D open PDK, in the standard 
 - **Verification:** RTL, ALU (1,024 cases), gate-level and post-layout SDF simulation pass at min/typ/max; LVS match;
   DRC 0 violations with `c1d_drc.drc` v1.1.
 
+## Size and process
+
+| | |
+|---|---|
+| Die | 3 mm x 3 mm = 9 mm² |
+| Core (routed block) | 1.6 mm x 1.6 mm = 2.56 mm² |
+| Standard-cell area | 0.66 mm² (310 cells, 19 flip-flops; about 26 % of the core) |
+| Transistors | about 4,300 (cell count x transistors per cell from SCL's cell netlists) |
+| Density | about 6,600 transistors / mm² of cell area, about 480 / mm² of die |
+| Clock | 10 MHz |
+
+**What "1.2 um" means here.** On SCL C1D the name is a real dimension: the minimum drawn gate length of an NMOS
+transistor is 1.2 um (PMOS 1.5 um). Other minimum rules from SCL's DRC deck (`c1d_drc.drc` v1.1): poly width
+1.2 um, diffusion width 2.5 um, metal1 2.4 um wide / 1.5 um spacing, metal2 2.5 um wide / 1.7 um spacing. It is a
+planar n-well CMOS process with two metal layers. One flip-flop (`DFCL11`) is 100.8 um x 48.7 um.
+
+**Compared with a "2 nm" chip.** Modern node names are generation labels, not measurements: nothing on a "2 nm"
+chip is 2 nm wide. A 2 nm-class process has gate lengths of roughly 12-16 nm, metal pitches of roughly 20-25 nm,
+gate-all-around nanosheet transistors, 15+ metal layers and roughly 200-300 million transistors per mm², about
+40,000 times this chip's density. Up to the 1990s node names did match the gate length, as 1.2 um does here
+(the Intel 80386 of 1985 used a similar 1.5 um process).
+
 ## Images
 
 Rendered from the final submitted GDS with KLayout (`flow/render_images.py`).
